@@ -2,6 +2,7 @@ const getTemplate = require('./get-template');
 const getTemplateUrl = require('./get-template-url');
 const processTemplate = require('../process-template');
 const path = require('path');
+const camelToDash = require('../camel-to-dash');
 
 module.exports.get = function (file, ast) {
     const results = [];
@@ -9,7 +10,7 @@ module.exports.get = function (file, ast) {
     const templateUrl = getTemplateUrl(ast);
     const componentName = path.basename(file).replace(/[\.-]component\.ts/, '');
 
-    results.push(`    selector: '${componentName}'`);
+    results.push(`    selector: 'ssi-${camelToDash(componentName.split('.')[0])}'`);
     if (template) {
         results.push(`    template: \`${processTemplate(template)}\``);
     }

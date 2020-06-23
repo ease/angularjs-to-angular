@@ -223,6 +223,15 @@ module.exports = function(template, componentDict) {
     // Replace itemtype with [attr.itemtype]
     result = result.replace(/itemtype="{{(.*)}}"/, '[attr.itemtype]="$1"');
 
+    // Replace ui-sref with uiSref
+    result = result.replace(/ui-sref/g, 'uiSref');
+
+    // Replace ui-sref-active with uiSrefActive
+    result = result.replace(/ui-sref-active/g, 'uiSrefActive');
+
+    // Remove viewModel(vm) property prefix
+    result = result.replace(/vm./g, '');
+
     // Replace ng-view with router-outlet
     result = result.replace(/ng-view/g, 'router-outlet');
 

@@ -5,7 +5,7 @@ const getProperties = require('../get-properties');
 
 module.exports.get = function (ast) {
     const classes = ast.statements.filter(x => x.kind === kind.ClassDeclaration);
-    const controllerClass = classes[1];
+    const controllerClass = classes[0];
 
     const result = [];
 
@@ -22,7 +22,7 @@ module.exports.get = function (ast) {
 
             // We don't want $onInit, $onChanges or $onDestroy property or method declarations 
             // as they are handled separately
-            if (/\$(onInit|onChanges|onDestroy)/.test(p.name.text)) {
+            if (/\$(onInit|onChanges|onDestroy|postLink)/.test(p.name.text)) {
                 return;
             }
 

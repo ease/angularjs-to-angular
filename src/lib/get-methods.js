@@ -31,7 +31,7 @@ module.exports.all = function getMethods(theClass) {
         }
 
         //We don't want $onInit, $onChanges or $onDestroy property or method declarations as they are handled separately
-        if((m.kind === kind.PropertyDeclaration || m.kind === kind.MethodDeclaration) && /(onInit|onChanges|onDestroy)/.test(m.name.text)) {
+        if((m.kind === kind.PropertyDeclaration || m.kind === kind.MethodDeclaration) && /(onInit|onChanges|onDestroy|postLink)/.test(m.name.text)) {
             return;
         }
 

@@ -6,5 +6,5 @@ module.exports = function(ast) {
     if(classes && classes.length > 1) {
         return classes[1];
     }
-    return undefined;
+    return classes[0];
 };

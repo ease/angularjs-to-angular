@@ -4,8 +4,8 @@ const kind = ts.SyntaxKind;
 module.exports = function(ast) {
     const classes = ast.statements.filter(x => x.kind === kind.ClassDeclaration);
     const componentClass = classes[0];
-
-    let name = componentClass.name.text;
+    // /blue|house|car/gi
+    let name = componentClass.name.text.replace(/Ctrl|Controller/, '');
     if (name.indexOf('Component') === -1) {
         name += 'Component';
     }

@@ -3,6 +3,7 @@ const replacements = [
     [/(ng\.)?IPromise<(.*)>/g, 'Promise<$2>'],
     [/ng\.IHttpPromise<(.*)>/g, 'Promise<$1>'],
     [/(ng\.)?IPromise/g, 'Promise'],
+    [/this\.\$q/g, 'Promise'],
     [/(this|self)\.\$q\.when\(\)/g, 'Promise.resolve()'],
     [/(this|self)\.\$q\.all/g, 'Promise.all'],
     [/( *)(let|const)?\s*defer(red)?:?.*? = (this|self)\.\$q\.defer\(\)/g, '$1let deferredResolve;\n$1let deferredReject;\n$1let deferred: Promise<any> = new Promise((resolve, reject) => {\n$1    deferredResolve = resolve;\n$1    deferredReject = reject;\n$1})'],
@@ -17,7 +18,7 @@ const replacements = [
     [/\(\$q, /g, '('],
 
     // $window
-    [/private \$window(: (any|ng\.IWindowService))?/g, '@Inject(\'$window\') private $window: any'],
+    [/private \$window(: (any|ng|angular\.IWindowService))?/g, '@Inject(\'$window\') private $window: any'],
 
     // configuration
     [/private configuration(: any)?/g, '@Inject(\'configuration\') private configuration: any'],

@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "components": "node src/index.js -c 'tests/data/**/*component.{js,ts}'",
-    "templates": "node src/index.js -t 'tests/data/**/*.tpl.html'",
+    "templates": "node src/index.js -t 'tests/data/**/*.html'",
     "services": "node src/index.js -s 'tests/data/**/!(*routes|*module|*component|*spec).{js,ts}'",
     "serviceSpecs": "node src/index.js --serviceSpecs 'tests/data/**/*{service,model}.{js,ts}'",
     "test": "ava"

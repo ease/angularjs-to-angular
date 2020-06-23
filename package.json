@@ -26,24 +26,24 @@
   },
   "homepage": "https://github.com/erictsai6/angularjs-to-angular#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.1",
-    "glob": "^7.1.2",
-    "handlebars": "^4.0.10",
+    "cheerio": "^1.0.0-rc.3",
+    "glob": "^7.1.6",
+    "handlebars": "^4.7.6",
     "lodash.sortby": "^4.7.0",
     "lodash.uniq": "^4.5.0",
     "lodash.uniqueid": "^4.0.1",
     "node-glob": "^1.2.0",
-    "prettier": "^1.4.4",
-    "rimraf": "^2.6.1",
-    "typescript": "^2.5.0-dev.20170616",
-    "typescript-formatter": "^5.2.0",
-    "yargs": "^8.0.1"
+    "prettier": "^1.12.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~3.1.x",
+    "typescript-formatter": "^7.2.2",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
+    "ava": "^3.9.0",
     "eslint": "^3.19.0",
-    "js-beautify": "^1.6.14",
-    "rimraf": "^2.6.1"
+    "js-beautify": "^1.11.0",
+    "rimraf": "^3.0.2"
   },
   "bin": "src/index.js"
 }

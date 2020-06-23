@@ -1,0 +1,98 @@
+<form
+  name="loginForm"
+  autocomplete="off"
+  novalidate
+  ng-submit="vm.login()">
+
+  <div class="landing-container-inner border-bottom-rounded">
+    <div class="form-group" >
+      <input
+        type="email"
+        ng-model="vm.form.email_address"
+        name="email"
+        required
+        class="form-control login-field"
+        placeholder="{{ 'EMAIL' | translate | lowercase }}">
+    </div>
+
+    <div class="form-group spacer-top">
+      <app-password-input
+        ng-model="vm.form.password"
+        name="password"
+        placeholder="{{ 'PASSWORD' | translate | lowercase }}"
+        class="login-field"
+        required>
+      </app-password-input>
+      <div class="form-meta">
+        <small>
+          <em>
+            <a
+              href="javascript:;"
+              translate="FORGOT_YOUR_PASSWORD_QUESTION_MARK"
+              ui-sref="^.forgotPassword">
+            </a>
+          </em>
+        </small>
+      </div>
+    </div>
+
+    <div class="form-group spacer-top" ng-show="vm.twoFaRequired">
+      <input
+        type="text"
+        ng-model="vm.form.two_factor_authentication_code"
+        placeholder="{{ 'SMS_INSTRUCTION' | translate:{digits: 6} }}"
+        class="form-control login-field"
+        ng-required="vm.twoFaRequired">
+
+      <small
+        class="help-block text-light"
+        translate="CODE_SENT_TO_MOBILE">
+      </small>
+    </div>
+    <br>
+  </div>
+
+  <br>
+
+  <div class="login-buttons">
+    <button
+      type="button"
+      class="btn btn-google"
+      ng-click="vm.loginWithGoogle()">
+      <img src="./img/g-logo-2.svg">
+      Sign in with Google
+    </button>
+    <button
+      type="submit"
+      class="btn btn-success"
+      ng-disabled="!loginForm.$valid">
+      Sign in with Email
+    </button>
+  </div>
+
+  <div class="text-right terms-footer spacer-top">
+    <small>
+      <em>
+        by logging in, I agree to <a target="_blank" href="https://picsum.photos/536/354">My's T&C's</a>
+      </em>
+    </small>
+  </div>
+
+  <p
+    class="chat-toggle-trigger"
+    ng-click="vm.openChat($event)"
+  >
+    <span
+      translate="This is something"
+    ></span>
+
+    <strong
+      translate="CLICK_HERE"
+    ></strong>
+
+    <span
+      translate="DEMO_TEXT"
+    ></span>
+  </p>
+
+</form>

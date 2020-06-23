@@ -5,15 +5,15 @@ import { Identity } from '../../shared/models/identity.model';
 
 import * as template from './account.component.html';
 
-export class AccountComponent implements ng.IComponentOptions {
-    controller: ng.IControllerConstructor;
-    template: string;
+// export class AccountComponent implements ng.IComponentOptions {
+//     controller: ng.IControllerConstructor;
+//     template: string;
 
-    constructor() {
-        this.controller = AccountController;
-        this.template = String(template);
-    }
-}
+//     constructor() {
+//         this.controller = AccountController;
+//         this.template = String(template);
+//     }
+// }
 
 class AccountController implements ng.IComponentController {
 

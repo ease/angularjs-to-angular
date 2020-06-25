@@ -229,6 +229,19 @@ module.exports = function(template, componentDict) {
     // Replace ui-sref-active with uiSrefActive
     result = result.replace(/ui-sref-active/g, 'uiSrefActive');
 
+    // Replace form $valid and $invalid with valid and invalid
+    result = result.replace(/\$invalid/g, 'invalid');
+    result = result.replace(/\$valid/g, 'valid');
+
+    // Replace old with the new translate params
+    result = result.replace(/translate-values/g, '[translateParams]');
+
+    // Replace old with the new translate params
+    result = result.replace(/ng-form/g, 'ngForm');
+
+    // Replace old with the new translate params
+    result = result.replace(/(name=")(\w+Form)/g, '#$2="ngForm');
+
     // Remove viewModel(vm) property prefix
     result = result.replace(/vm./g, '');
 

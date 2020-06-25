@@ -38,6 +38,14 @@ const replacements = [
 
     // One off issues with PromotionalControllerBase
     [/public abstract \$onInit: \(\) => void;/g, 'public abstract ngOnInit(): void;'],
+    
+    // $translate to translate
+    [/private \$translate/g, 'private translate: TranslateService'],
+    [/this\.\$translate/g, 'this.translate'],
+
+    // api service
+    [/private api/g, 'private api: API'],
+    [/private api\: angular\.IHttpService/g, 'private api: API'],
 
     [/super\(\$q, \$routeParams, window,/g, 'super($routeParams,'],
 

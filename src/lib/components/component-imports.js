@@ -51,6 +51,14 @@ module.exports.get = function (ast) {
         results.push('import { Location } from \'@angular/common\';');
     }
 
+    if ((/private \$translate/.test(ast.text))) {
+        results.push('import { TranslateService } from \'@ngx-translate/core\';');
+    }
+
+    if ((/private api/.test(ast.text))) {
+        results.push('import { API } from \'@ui-resources-angular\';');
+    }
+
     // (TODO) - New developers please add additional statements if you have custom utilities that you want to import.
     //  we've provided a commented out code snippet below
     // if (/\$ngRedux/.test(ast.text) && !/NgRedux/.test(ast.text)) {

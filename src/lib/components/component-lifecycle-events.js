@@ -17,7 +17,7 @@ module.exports.getOnInit = function (ast) {
 
     if (onInit) {
         onInit = ast.text.slice(onInit.pos, onInit.end);
-        onInit = onInit.replace(/(public|private|async) ?\$onInit.*/, 'ngOnInit(): void {');
+        onInit = onInit.replace(/(public|private|async| ) ?\$onInit.*/, 'ngOnInit(): void {');
     }
     else {
         const constructor = controllerClass.members.find(x => x.kind === kind.Constructor);

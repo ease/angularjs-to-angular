@@ -223,11 +223,15 @@ module.exports = function(template, componentDict) {
     // Replace itemtype with [attr.itemtype]
     result = result.replace(/itemtype="{{(.*)}}"/, '[attr.itemtype]="$1"');
 
-    // Replace ui-sref with uiSref
-    result = result.replace(/ui-sref/g, 'uiSref');
-
     // Replace ui-sref-active with uiSrefActive
-    result = result.replace(/ui-sref-active/g, 'uiSrefActive');
+    result = result.replace(/ui\-sref\-active/g, 'uiSrefActive');
+
+    // Replace ui-sref with uiSref
+    result = result.replace(/ui\-sref/g, 'uiSref');
+
+    // Replace old with new bootstrap dropdown directive
+    result = result.replace(/uib\-dropdown\-toggle/g, 'ngbDropdownToggle');
+    result = result.replace(/uib\-dropdown/g, 'ngbDropdown');
 
     // Replace form $valid and $invalid with valid and invalid
     result = result.replace(/\$invalid/g, 'invalid');

@@ -232,6 +232,7 @@ module.exports = function(template, componentDict) {
     // Replace old with new bootstrap dropdown directive
     result = result.replace(/uib\-dropdown\-toggle/g, 'ngbDropdownToggle');
     result = result.replace(/uib\-dropdown/g, 'ngbDropdown');
+    result = result.replace(/uib\-collapse/g, 'ngbCollapse');
 
     // Replace form $valid and $invalid with valid and invalid
     result = result.replace(/\$invalid/g, 'invalid');

@@ -238,7 +238,10 @@ module.exports = function(template, componentDict) {
     result = result.replace(/\$valid/g, 'valid');
 
     // Replace old with the new translate params
-    result = result.replace(/translate-values/g, '[translateParams]');
+    result = result.replace(/translate\-values/g, '[translateParams]');
+
+    // Replace old with the new translate params
+    result = result.replace(/ssi\-trigger\-publish/g, '[ssiTriggerPublish]');
 
     // Replace old with the new translate params
     result = result.replace(/ng-form/g, 'ngForm');
